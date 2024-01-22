@@ -1,0 +1,37 @@
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+
+    int n;
+    while (true) {
+        cout << "Enter the size of the array (n < 15): ";
+        cin >> n;
+
+        if (n > 0 && n < 15) {
+            break;
+        } else {
+            cout << "Invalid input. Please enter a value less than 15." << endl;
+        }
+    }
+
+    int array[15];
+    for (int i = 0; i < n; ++i) {
+        cout << "Array element " << i + 1 << ": ";
+        cin >> array[i];
+    }
+
+
+    sort(array, array + n);
+
+
+    cout << "The sorted array is:";
+    for (int i = 0; i < n; ++i) {
+        cout << " " << array[i];
+    }
+    cout << endl;
+
+    return 0;
+}

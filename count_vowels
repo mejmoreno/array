@@ -1,0 +1,54 @@
+#include <iostream>
+#include <cctype>
+
+using namespace std;
+
+int main() {
+    // Input a string with capital letters
+    cout << "Enter a string: ";
+    string inputString;
+    getline(cin, inputString);
+
+    // Initialize counters for each vowel
+    int vowelCounts[5] = {0};  // A, E, I, O, U
+
+    // Count whitespaces
+    int whitespaceCount = 0;
+
+    // Count vowels and whitespaces
+    for (char character : inputString) {
+        char upperChar = toupper(character);
+
+        switch (upperChar) {
+            case 'A':
+                vowelCounts[0]++;
+                break;
+            case 'E':
+                vowelCounts[1]++;
+                break;
+            case 'I':
+                vowelCounts[2]++;
+                break;
+            case 'O':
+                vowelCounts[3]++;
+                break;
+            case 'U':
+                vowelCounts[4]++;
+                break;
+            case ' ':
+                whitespaceCount++;
+                break;
+        }
+    }
+
+    // Display results
+    cout << "Vowels:" << endl;
+    cout << "A\t" << vowelCounts[0] << endl;
+    cout << "E\t" << vowelCounts[1] << endl;
+    cout << "I\t" << vowelCounts[2] << endl;
+    cout << "O\t" << vowelCounts[3] << endl;
+    cout << "U\t" << vowelCounts[4] << endl;
+    cout << "Whitespaces - " << whitespaceCount << endl;
+
+    return 0;
+}
